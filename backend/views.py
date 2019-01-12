@@ -7,15 +7,22 @@ from .crawler import Crawler
 @csrf_exempt
 def urlInput(request):
     # import pudb; pudb.set_trace();
-    url = request.GET['url']
-    crawledData = Crawler(url, 25)
-    crawled_urls = clean_output(crawledData.crawled_urls)
-    response = ":::::::::::::::::::::::" + "URL COUNT: " + str(len(crawledData.crawled_urls)) + "::::::::::::::::::::::::\n" + crawled_urls
-    data = {
-                "success": True,
-                "data": response
-            }
-    return JsonResponse(data)
+    try:
+        url = request.GET['url']
+        crawledData = Crawler(url, 25)
+        crawled_urls = clean_output(crawledData.crawled_urls)
+        response = ":::::::::::::::::::::::" + "URL COUNT: " + str(len(crawledData.crawled_urls)) + "::::::::::::::::::::::::\n" + crawled_urls
+        data = {
+                    "success": True,
+                    "data": response
+                }
+        return JsonResponse(data)
+    except Exception as e:
+        data = {
+            "success": False,
+            "data": {"Something went wrong !!" + e}
+        }
+        return JsonResponse(data)
 
 
 def clean_output(crawled_urls):
