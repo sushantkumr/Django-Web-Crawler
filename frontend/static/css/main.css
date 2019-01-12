@@ -1,0 +1,33 @@
+html, body{
+    height: 100%;
+}
+
+
+body {
+    font-family: "Open Sans", sans-serif;*;
+    font-weight: 400;
+    background-color: #f1f1ea;
+    padding:2em;
+}
+
+textarea {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.s-m-t-2 {
+    margin-top: 10px !important;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    line-height:150px;
+    padding-left:235px;
+}
+::-webkit-input-placeholder { /* Webkit */
+    line-height:150px;
+    padding-left:235px;
+}
+:-ms-input-placeholder { /* IE */
+    line-height:150px;
+    padding-left:235px;
+}

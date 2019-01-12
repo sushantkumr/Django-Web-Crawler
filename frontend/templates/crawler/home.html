@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Crawler</title>
+
+    <link rel="stylesheet" href="/static/css/semantic.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script type="text/javascript" src="/static/js/libs/jQuery.min.js"></script>
+  	<script type="text/javascript" src="/static/js/home.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Web Crawler</h1>
+      <br />
+      <div>
+      		<h5>Crawl URL:</h5>
+	      	<div class="ui labeled input">
+  				<div class="ui label">
+    				http://
+  				</div>
+  				<input id="inputUrl" type="text" placeholder="Search...">
+			</div>
+	      	<br />
+      		<button id="submitInput" class="ui button s-m-t-2 primary" onclick="submitBytecode()">
+	  			   Crawl
+			    </button>
+         <button id="clearArea" class="ui button s-m-t-2 primary" onclick="clearTextArea()" style="display:inline; margin-left: 490px;">
+             Clear
+          </button>
+      </div>
+      <div id="busyMessage" class="ui info message compact hidden">
+        Submitted request with URL. Waiting for results.<br>
+         This may take a few minutes...
+      </div>
+      <div class="s-m-t-2">
+      	<h5 id="outputSection">Crawled Results:</h5>
+      	<textarea id="outputArea" rows="10" cols="75" placeholder="Output with Issue list" disabled="true"></textarea>
+      </div>
+  	</div>
+  </body>
+</html>
